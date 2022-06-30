@@ -1,0 +1,24 @@
+// Database Collection
+In Hyper Terminal
+
+mongo
+mongod
+show dbs
+use contestDB
+show collections
+db.cotests.find()
+
+
+
+Termial
+
+git add .
+git status
+git commit -m "text"
+git push -u orgin main
+
+
+// To run the file
+Terminal
+
+nodemon filename.js
