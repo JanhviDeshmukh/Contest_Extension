@@ -6,7 +6,9 @@ const mongoose = require('mongoose');
 var globalRow = [];
 // console.log("A")
 module.exports = async function scrape() {
-   const browser = await puppeteer.launch({})
+   const browser = await puppeteer.launch({
+      executablePath: '/usr/bin/chromium-browser'
+    })
    const page = await browser.newPage()
 
    await page.goto('https://www.codechef.com/contests/?itm_medium=navmenu&itm_campaign=allcontests')

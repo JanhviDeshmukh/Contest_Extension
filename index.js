@@ -5,10 +5,10 @@ const mongoose = require('mongoose');
 const { application } = require("express");
 mongoose.connect("mongodb+srv://admin:zxtqqD5rDBDkrjdT@cluster0.qquu6.mongodb.net/contestDB", { useNewUrlParser: true });
 
-// const app = express();
+const app = express();
 setInterval(scrape, 1000 * 60 * 60);
 
-scrape();
+// scrape();
 
 app.get('/codechef', function (req, res) {
      if (req.query.conteststatus == "live") {
