@@ -41,7 +41,7 @@ app.get('/codechef', function (req, res) {
                }
           });
      }
-     else if(req.query.conteststatus == "all"){
+     else if(Object.keys(req.query).length == 0){
           contest.find({ Platform: "codechef" }, function (err, contest) {
                if (err) {
                     console.log(err);
@@ -54,7 +54,9 @@ app.get('/codechef', function (req, res) {
      else{
           res.status(400).send(
                {
-                    message: "Bad Request - Specify correct parameters"
+                    status: 400,
+                    error: "Bad Request",
+                    message: "Specify correct parameters"
                }
           );
      }
@@ -88,7 +90,7 @@ app.get('/codeforces', function (req, res) {
                }
           );
      }
-     else if(req.query.conteststatus == "all"){
+     else if(Object.keys(req.query).length == 0){
           contest.find({ Platform: "codeforces" }, function (err, contest) {
                if (err) {
                     console.log(err);
@@ -101,7 +103,9 @@ app.get('/codeforces', function (req, res) {
      else{
           res.status(400).send(
                {
-                    message: "Bad Request - Specify correct parameters"
+                    status: 400,
+                    error: "Bad Request",
+                    message: "Specify correct parameters"
                }
           );
      }
